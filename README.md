@@ -9,7 +9,7 @@ GTSheet is a a simple, easy to integrate solution for presenting `UIViewControll
 
 ### Carthage
 
-    github "gametimesf/GTSheet" == 1.1
+    github "gametimesf/GTSheet" == 1.0.5
 
 ## Getting Started
 
