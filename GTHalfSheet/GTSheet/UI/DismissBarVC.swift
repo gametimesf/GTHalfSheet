@@ -13,8 +13,9 @@ public class DismissBarVC: UIViewController {
     private static var identifier: String = "DismissBarVC"
 
     @IBOutlet weak var backgroundView: UIView?
-
-    public static func instance(tintColor: UIColor) -> DismissBarVC {
+	@IBOutlet weak var topBar: UIView!
+	
+	public static func instance(tintColor: UIColor, barColor: UIColor? = nil) -> DismissBarVC {
 
         let storyboard = UIStoryboard(
             name: DismissBarVC.storyboardName,
@@ -24,6 +25,11 @@ public class DismissBarVC: UIViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: DismissBarVC.identifier) as! DismissBarVC
         vc.loadViewIfNeeded()
         vc.backgroundView?.backgroundColor = tintColor
+		
+		if let barColor = barColor {
+			vc.topBar.backgroundColor = barColor
+		}
+		
         return vc
     }
 }
